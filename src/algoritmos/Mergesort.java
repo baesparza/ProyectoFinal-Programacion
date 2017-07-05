@@ -17,8 +17,8 @@ public class Mergesort extends Sort {
     Tiempo timer = new Tiempo();
 
     // constructor con los atributos de la clase Sort
-    public Mergesort() {
-        super();
+    public Mergesort(int[] lista) {
+        super(lista);
         this.nombre_algoritmo = "Merge Sort";
         this.descripcion_algoritmo = "Descripcion...";
     }

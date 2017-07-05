@@ -15,8 +15,8 @@ public class Heapsort extends Sort {
     Tiempo timer = new Tiempo();
 
     // constructor con los atributos de la clase Sort
-    public Heapsort() {
-        super();
+    public Heapsort(int[] lista) {
+        super(lista);
         this.nombre_algoritmo = "Heap Sort";
         this.descripcion_algoritmo = "Descripcion...";
     }

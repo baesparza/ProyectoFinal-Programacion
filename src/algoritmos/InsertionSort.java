@@ -15,8 +15,8 @@ public class InsertionSort extends Sort {
     Tiempo timer = new Tiempo();
 
     // constructor con los atributos de la clase Sort
-    public InsertionSort() {
-        super();
+    public InsertionSort(int[] lista) {
+        super(lista);
         this.nombre_algoritmo = "Insertion Sort";
         this.descripcion_algoritmo = "Para ordenar una lista de elementos desordenada, eliminamos sus entradas una a una e insertamos Cada uno de ellos en una parte ya ordenada";
     }

@@ -7,6 +7,8 @@
  */
 package test;
 
+import generador.generador;
+
 import algoritmos.InsertionSort;
 import algoritmos.Heapsort;
 import algoritmos.Mergesort;
@@ -15,27 +17,60 @@ import java.util.Scanner;
 
 public class test {
 
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        //creo un nuevo objeto de tipo InsertionSort
-        InsertionSort insertionSort = new InsertionSort();
-        Heapsort heapSort = new Heapsort();
-        Mergesort mergeSort = new Mergesort();
+    static Scanner input = new Scanner(System.in);
 
-        insertionSort.cargarLista(1);
+    // inicializamos el generador
+    static generador gen = new generador(300);
+
+    private static int[] lista;
+
+    public static void main(String[] args) {
+        
+        // Pedimo La lista a generar
+        cargarLista();
+
+        //creo un nuevo objeto por cada algoritmo de sort
+        InsertionSort insertionSort = new InsertionSort(lista);
+        Heapsort heapSort = new Heapsort(lista);
+        Mergesort mergeSort = new Mergesort(lista);
+
         insertionSort.sortList();
         insertionSort.presentar();
-        
+
         System.out.println();
-        
-        heapSort.cargarLista(1);
+
         heapSort.sortList();
         heapSort.presentar();
-        
+
         System.out.println();
-        
-        mergeSort.cargarLista(1);
+
         mergeSort.sortList();
         mergeSort.presentar();
+    }
+
+    public static void cargarLista() {
+        /**
+         * Dependiendo de la opcion que el usuario elija(opc) cargamos uno de
+         * los 3 tipos de listas para realizar las pruebas.
+         */
+        System.out.print("Ingrese el Tipo de lista que desea cargar: ");
+        int opc = Integer.parseInt(input.next());
+        switch (opc) {
+            case (1):
+                // lista semi ordenada
+                lista = gen.semiordenada();
+                break;
+            case (2):
+                // lista desordenada
+                lista = gen.desordenada();
+                break;
+            case (3):
+                // lista ordenada al reves
+                lista = gen.invertida();
+                break;
+            default:
+                cargarLista();
+                break;
+        }
     }
 }
