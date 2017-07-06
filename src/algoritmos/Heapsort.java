@@ -13,12 +13,13 @@ public class Heapsort extends Sort {
 
     // timer
     Tiempo timer = new Tiempo();
-
+    
     // constructor con los atributos de la clase Sort
-    public Heapsort(int[] lista) {
-        super(lista);
-        this.nombre_algoritmo = "Heap Sort";
-        this.descripcion_algoritmo = "Descripcion...";
+    public Heapsort(int opc) {
+        super("Heap Sort",
+                "Descripcion..."
+        );
+        this.lista = this.cargarLista(opc);
     }
 
     public void sortList() {
@@ -29,14 +30,14 @@ public class Heapsort extends Sort {
             while (j >= 0 && temp < this.lista[j]) {
                 this.lista[j + 1] = this.lista[j];
                 j--;
-                this.cont_procesos++;
+                this.add_cont_procesos();
             }
-            this.cont_procesos++;
+            this.add_cont_procesos();
 
             this.lista[j + 1] = temp;
         }
         this.timer.stop();
-        this.total = this.timer.time();
+        this.set_time(this.timer.time());
     }
 }
 
