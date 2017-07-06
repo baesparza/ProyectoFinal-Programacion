@@ -10,12 +10,11 @@ package Tiempo;
 public class Tiempo {
 
     private long total;
-    public long inicio_time;
-    public long final_time;
+    private long inicio_time;
+    private long final_time;
 
     // constructor
     public Tiempo() {
-
     }
 
     public void start() {
@@ -30,4 +29,5 @@ public class Tiempo {
         this.total += (this.final_time - this.inicio_time);
         return this.total;
     }
+    
 }
