@@ -1,4 +1,3 @@
-
 /**
  * @license
  * Copyright (c) 2017 Bruno Esparza, Jorge Hurtado
@@ -15,19 +14,18 @@ public class Mergesort extends Sort {
 
     // timer
     Tiempo timer = new Tiempo();
-
+    
     // constructor con los atributos de la clase Sort
-    public Mergesort(int[] lista) {
-        super(lista);
-        this.nombre_algoritmo = "Merge Sort";
-        this.descripcion_algoritmo = "Descripcion...";
+    public Mergesort(int opc) {
+        super("Merge Sort",
+                "Descripcion..."
+        );
+        this.lista = this.cargarLista(opc);
     }
 
     public void sortList() {
         this.timer.start();
-        Arrays.sort(this.lista);
         this.timer.stop();
-        this.total = this.timer.time();
+        this.set_time(this.timer.time());
     }
 }
-
