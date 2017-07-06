@@ -7,32 +7,38 @@
  */
 package test;
 
-import generador.generador;
-
 import algoritmos.InsertionSort;
 import algoritmos.Heapsort;
 import algoritmos.Mergesort;
+import algoritmos.BubbleSort;
+import algoritmos.SelectionSort;
+import algoritmos.JavaSort;
+import algoritmos.ShellSort;
 
 import java.util.Scanner;
 
 public class test {
 
-    static Scanner input = new Scanner(System.in);
-
-    // inicializamos el generador
-    static generador gen = new generador(300);
-
-    private static int[] lista;
+    private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        
-        // Pedimo La lista a generar
-        cargarLista();
 
-        //creo un nuevo objeto por cada algoritmo de sort
-        InsertionSort insertionSort = new InsertionSort(lista);
-        Heapsort heapSort = new Heapsort(lista);
-        Mergesort mergeSort = new Mergesort(lista);
+        // variables y Pedimo La lista a generar
+        System.out.print("Ejercicio");
+        System.out.println();
+        System.out.print("Ingrese el Tipo de lista que desea cargar: ");
+        int opc = Integer.parseInt(input.next());
+
+        //creo un nue= vo objeto por cada algoritmo de sort
+        InsertionSort insertionSort = new InsertionSort(opc);
+        Heapsort heapSort = new Heapsort(opc);
+        Mergesort mergeSort = new Mergesort(opc);
+        BubbleSort bubbleSort = new BubbleSort(opc);
+        SelectionSort selectionSort = new SelectionSort(opc);
+        JavaSort javaSort = new JavaSort(opc);
+        ShellSort shellSort = new ShellSort(opc);
+
+        System.out.println();
 
         insertionSort.sortList();
         insertionSort.presentar();
@@ -46,31 +52,25 @@ public class test {
 
         mergeSort.sortList();
         mergeSort.presentar();
-    }
-
-    public static void cargarLista() {
-        /**
-         * Dependiendo de la opcion que el usuario elija(opc) cargamos uno de
-         * los 3 tipos de listas para realizar las pruebas.
-         */
-        System.out.print("Ingrese el Tipo de lista que desea cargar: ");
-        int opc = Integer.parseInt(input.next());
-        switch (opc) {
-            case (1):
-                // lista semi ordenada
-                lista = gen.semiordenada();
-                break;
-            case (2):
-                // lista desordenada
-                lista = gen.desordenada();
-                break;
-            case (3):
-                // lista ordenada al reves
-                lista = gen.invertida();
-                break;
-            default:
-                cargarLista();
-                break;
-        }
+        
+        System.out.println();
+        
+        bubbleSort.sortList();
+        bubbleSort.presentar();
+        
+        System.out.println();
+        
+        selectionSort.sortList();
+        selectionSort.presentar();
+        
+        System.out.println();
+        
+        javaSort.sortList();
+        javaSort.presentar();
+        
+        System.out.println();
+        
+        shellSort.sortList();
+        shellSort.presentar();
     }
 }
