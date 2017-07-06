@@ -13,12 +13,13 @@ public class InsertionSort extends Sort {
 
     // timer
     Tiempo timer = new Tiempo();
-
+    
     // constructor con los atributos de la clase Sort
-    public InsertionSort(int[] lista) {
-        super(lista);
-        this.nombre_algoritmo = "Insertion Sort";
-        this.descripcion_algoritmo = "Para ordenar una lista de elementos desordenada, eliminamos sus entradas una a una e insertamos Cada uno de ellos en una parte ya ordenada";
+    public InsertionSort(int opc) {
+        super("Insertion Sort",
+                "Para ordenar una lista de elementos desordenada, eliminamos sus entradas una a una e insertamos Cada uno de ellos en una parte ya ordenada"
+        );
+        this.lista = this.cargarLista(opc);
     }
 
     public void sortList() {
@@ -29,13 +30,13 @@ public class InsertionSort extends Sort {
             while (j >= 0 && temp < this.lista[j]) {
                 this.lista[j + 1] = this.lista[j];
                 j--;
-                this.cont_procesos++;
+                this.add_cont_procesos();
             }
-            this.cont_procesos++;
+            this.add_cont_procesos();
 
             this.lista[j + 1] = temp;
         }
         this.timer.stop();
-        this.total = this.timer.time();
+        this.set_time(this.timer.time());
     }
 }
