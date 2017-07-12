@@ -11,14 +11,27 @@ import java.util.Arrays;
 
 public class InsertionSortInteger extends Sort {
 
-    // constructor con los atributos de la clase Sort
     public InsertionSortInteger(int opc) {
+        /**
+         * Recive la opcion de la lista a cargar,  llama a la funcion que carga la lista, y la guarda el la variable lista
+         * envia el nombre del algorirmo a la clase padre(super)
+         */
+
         super("Insertion Sort Integer ");
         this.lista = this.cargarLista(opc);
     }
 
     public void sortList() {
+        /**
+         * Inicia timer
+         * Algoritmo Insertion Sort Integer
+         * se llama add_cont_procesos para aumentar el contador 
+         * Para el timer
+         * Se guarda el tiempo en una variable para presentarla
+         */
+
         this.timer.start();
+        
         int[] sortedArray = new int[this.lista.length];
         sortedArray[0] = this.lista[0];
 
@@ -45,11 +58,17 @@ public class InsertionSortInteger extends Sort {
         }
         this.lista = sortedArray;
         this.add_cont_procesos();
+
         this.timer.stop();
         this.set_time(this.timer.time());
     }
 
     public void run() {
+        /**
+         * Ejecuta el algoritmo
+         * y la funcion para presentar resultados
+         */
+        
         this.sortList();
         this.presentar();
     }

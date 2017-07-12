@@ -11,12 +11,26 @@ public class ShellSort extends Sort {
 
     // constructor con los atributos de la clase Sort
     public ShellSort(int opc) {
+        /**
+         * Recive la opcion de la lista a cargar,  llama a la funcion que carga la lista, y la guarda el la variable lista
+         * envia el nombre del algorirmo a la clase padre(super)
+         */
+
         super("Shell Sort");
         this.lista = this.cargarLista(opc);
     }
 
     public void sortList() {
+        /**
+         * Inicia timer
+         * Algoritmo Shell Sort
+         * se llama add_cont_procesos para aumentar el contador 
+         * Para el timer
+         * Se guarda el tiempo en una variable para presentarla
+         */
+
         this.timer.start();
+        
         boolean seguir;
         int n = this.lista.length;
         int aux;
@@ -45,6 +59,11 @@ public class ShellSort extends Sort {
     }
     
     public void run() {
+        /**
+         * Ejecuta el algoritmo
+         * y la funcion para presentar resultados
+         */
+        
         this.sortList();
         this.presentar();
     }

@@ -9,13 +9,25 @@ package algoritmos;
 
 public class Quicksort extends Sort {
 
-    // constructor con los atributos de la clase Sort
     public Quicksort(int opc) {
+        /**
+         * Recive la opcion de la lista a cargar,  llama a la funcion que carga la lista, y la guarda el la variable lista
+         * envia el nombre del algorirmo a la clase padre(super)
+         */
+
         super("Quick Sort");
         this.lista = this.cargarLista(opc);
     }
 
     public void sortlist_start() {
+        /**
+         * Inicia timer
+         * Algoritmo Quick Sort
+         * se llama add_cont_procesos para aumentar el contador 
+         * Para el timer
+         * Se guarda el tiempo en una variable para presentarla
+         */
+
         this.timer.start();
         this.sortList(this.lista, 0, this.lista.length - 1);
         this.timer.stop();
@@ -23,6 +35,11 @@ public class Quicksort extends Sort {
     }
 
     public void sortList(int[] array, int inicio, int fin) {
+        /**
+         * Algoritmo Quick Sort
+         * se llama add_cont_procesos para aumentar el contador
+         */
+
         int i = inicio, j = fin;
         if (fin - inicio >= 1) {
             int pivot = array[fin];
@@ -48,10 +65,14 @@ public class Quicksort extends Sort {
         } else {
             return;
         }
-
     }
 
     public void swap(int[] ar, int index1, int index2) {
+        /**
+         * Algoritmo Intercambia 2 numeros
+         * se llama add_cont_procesos para aumentar el contador
+         */
+        
         int temp = ar[index1];
         ar[index1] = ar[index2];
         ar[index2] = temp;
@@ -59,6 +80,11 @@ public class Quicksort extends Sort {
     }
 
     public void run() {
+        /**
+         * Ejecuta el algoritmo
+         * y la funcion para presentar resultados
+         */
+        
         this.sortlist_start();
         this.presentar();
     }

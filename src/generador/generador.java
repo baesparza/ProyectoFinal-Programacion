@@ -8,16 +8,28 @@
 package generador;
 
 public class generador {
+    /**
+     * Clase generador
+     * clase se encarga de crear, cargar y devolver las listas que se usaran den el programa
+    */
 
     private int[] lista;
 
-    // constructor con los atributos de la clase Sort
     public generador(int tam) {
+        /**
+         * Constructor
+         * Recibe el tamaño que va a tener la lista y crea una lista de ese tamaño
+        */
+
         this.lista = new int[tam];
     }
 
     public int[] desordenada() {
-        // Aqui se carca el archivo deshordenado.txt
+        /**
+         * Devuelve una lista desordenada que se carga desde una lista externa
+        */
+
+        // Aqui se carca el archivo deshordenado.
         for (int i = 0; i < this.lista.length; i++) {
             this.lista[i] = (int) (Math.random() * 10) + 1;
         }
@@ -25,6 +37,10 @@ public class generador {
     }
 
     public int[] invertida() {
+        /**
+         * Devuelve una lista ordenada de manera invertida (mayor a menor)
+        */
+        
         for (int i = this.lista.length - 1; i >=0; i--) {
             this.lista[this.lista.length - i - 1] = (int) (i);
         }
