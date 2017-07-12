@@ -8,8 +8,8 @@
 package test;
 
 import algoritmos.InsertionSort;
-import algoritmos.Heapsort;
-import algoritmos.Mergesort;
+import algoritmos.Quicksort;
+import algoritmos.InsertionSortInteger;
 import algoritmos.BubbleSort;
 import algoritmos.SelectionSort;
 import algoritmos.JavaSort;
@@ -31,8 +31,8 @@ public class test {
 
         //creo un nue= vo objeto por cada algoritmo de sort
         InsertionSort insertionSort = new InsertionSort(opc);
-        Heapsort heapSort = new Heapsort(opc);
-        Mergesort mergeSort = new Mergesort(opc);
+        Quicksort heapSort = new Quicksort(opc);
+        InsertionSortInteger insertionSortInteger = new InsertionSortInteger(opc);
         BubbleSort bubbleSort = new BubbleSort(opc);
         SelectionSort selectionSort = new SelectionSort(opc);
         JavaSort javaSort = new JavaSort(opc);
@@ -40,37 +40,30 @@ public class test {
 
         System.out.println();
 
-        insertionSort.sortList();
-        insertionSort.presentar();
+        insertionSort.run();
 
         System.out.println();
 
-        heapSort.sortList();
-        heapSort.presentar();
+        heapSort.run();
 
         System.out.println();
 
-        mergeSort.sortList();
-        mergeSort.presentar();
+        insertionSortInteger.run();
         
         System.out.println();
         
-        bubbleSort.sortList();
-        bubbleSort.presentar();
+        bubbleSort.run();
         
         System.out.println();
         
-        selectionSort.sortList();
-        selectionSort.presentar();
+        selectionSort.run();
         
         System.out.println();
         
-        javaSort.sortList();
-        javaSort.presentar();
+        javaSort.run();
         
         System.out.println();
         
-        shellSort.sortList();
-        shellSort.presentar();
+        shellSort.run();
     }
 }
