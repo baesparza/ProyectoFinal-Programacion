@@ -17,6 +17,10 @@ public class generador {
     }
 
     public int[] desordenada() {
+        // Aqui se carca el archivo deshordenado.txt
+        for (int i = 0; i < this.lista.length; i++) {
+            this.lista[i] = (int) (Math.random() * 10) + 1;
+        }
         return this.lista;
     }
 
