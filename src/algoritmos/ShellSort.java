@@ -16,9 +16,7 @@ public class ShellSort extends Sort {
 
     // constructor con los atributos de la clase Sort
     public ShellSort(int opc) {
-        super("Shell Sort",
-                "desc..."
-        );
+        super("Shell Sort");
         this.lista = this.cargarLista(opc);
     }
 
@@ -49,5 +47,10 @@ public class ShellSort extends Sort {
         
         this.timer.stop();
         this.set_time(this.timer.time());
+    }
+    
+    public void run() {
+        this.sortList();
+        this.presentar();
     }
 }
