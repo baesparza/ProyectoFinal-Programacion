@@ -17,9 +17,7 @@ public class BubbleSort extends Sort {
 
     // constructor con los atributos de la clase Sort
     public BubbleSort(int opc) {
-        super("Bubble Sort",
-                "Descripcion..."
-        );
+        super("Bubble Sort");
         this.lista = this.cargarLista(opc);
     }
 
@@ -48,5 +46,10 @@ public class BubbleSort extends Sort {
         } while (seguir);
         this.timer.stop();
         this.set_time(this.timer.time());
+    }
+    
+    public void run() {
+        this.sortList();
+        this.presentar();
     }
 }
