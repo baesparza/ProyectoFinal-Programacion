@@ -10,9 +10,6 @@ package algoritmos;
 import Tiempo.Tiempo;
 
 public class InsertionSort extends Sort {
-
-    // timer
-    Tiempo timer = new Tiempo();
     
     // constructor con los atributos de la clase Sort
     public InsertionSort(int opc) {

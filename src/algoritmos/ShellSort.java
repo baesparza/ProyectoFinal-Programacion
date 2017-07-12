@@ -7,12 +7,7 @@
  */
 package algoritmos;
 
-import Tiempo.Tiempo;
-
 public class ShellSort extends Sort {
-
-    // timer
-    Tiempo timer = new Tiempo();
 
     // constructor con los atributos de la clase Sort
     public ShellSort(int opc) {

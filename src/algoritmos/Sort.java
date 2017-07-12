@@ -7,12 +7,14 @@
  */
 package algoritmos;
 
+import Tiempo.Tiempo;
 import java.util.Arrays;
 
 import generador.generador;
 import java.util.Scanner;
 
 public class Sort {
+    
 
     // atributos de la clase
     private String nombre_projecto;
@@ -22,6 +24,7 @@ public class Sort {
     public int[] lista;
     private int cont_procesos = 0;
     private int lista_tamano = 20;
+    public Tiempo timer = new Tiempo();;
 
     // contructor con parametros
     public Sort(String nombre_algoritmo) {

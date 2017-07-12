@@ -7,13 +7,9 @@
  */
 package algoritmos;
 
-import Tiempo.Tiempo;
 import java.util.Arrays;
 
 public class InsertionSortInteger extends Sort {
-
-    // timer
-    Tiempo timer = new Tiempo();
 
     // constructor con los atributos de la clase Sort
     public InsertionSortInteger(int opc) {

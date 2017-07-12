@@ -7,12 +7,7 @@
  */
 package algoritmos;
 
-import Tiempo.Tiempo;
-
 public class Quicksort extends Sort {
-
-    // timer
-    Tiempo timer = new Tiempo();
 
     // constructor con los atributos de la clase Sort
     public Quicksort(int opc) {
