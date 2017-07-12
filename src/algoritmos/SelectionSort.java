@@ -16,9 +16,7 @@ public class SelectionSort extends Sort {
 
     // constructor con los atributos de la clase Sort
     public SelectionSort(int opc) {
-        super("Selection Sort",
-                "Desk..."
-        );
+        super("Selection Sort");
         this.lista = this.cargarLista(opc);
     }
 
@@ -45,5 +43,10 @@ public class SelectionSort extends Sort {
         }
         this.timer.stop();
         this.set_time(this.timer.time());
+    }
+        
+    public void run() {
+        this.sortList();
+        this.presentar();
     }
 }
