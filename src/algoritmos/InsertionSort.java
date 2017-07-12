@@ -16,9 +16,7 @@ public class InsertionSort extends Sort {
     
     // constructor con los atributos de la clase Sort
     public InsertionSort(int opc) {
-        super("Insertion Sort",
-                "Para ordenar una lista de elementos desordenada, eliminamos sus entradas una a una e insertamos Cada uno de ellos en una parte ya ordenada"
-        );
+        super("Insertion Sort");
         this.lista = this.cargarLista(opc);
     }
 
@@ -38,5 +36,10 @@ public class InsertionSort extends Sort {
         }
         this.timer.stop();
         this.set_time(this.timer.time());
+    }
+    
+    public void run() {
+        this.sortList();
+        this.presentar();
     }
 }
