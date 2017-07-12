@@ -21,7 +21,7 @@ public class Sort {
     private long time;
     public int[] lista;
     private int cont_procesos = 0;
-    private int lista_tamano = 5;
+    private int lista_tamano = 20;
 
     // contructor con parametros
     public Sort(String nombre_algoritmo) {
