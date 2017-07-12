@@ -16,23 +16,13 @@ public class generador {
         this.lista = new int[tam];
     }
 
-    public int[] semiordenada() {
-        for (int i = 0; i < this.lista.length; i++) {
-            this.lista[i] = (int) (Math.random() * 2000);
-        }
-        return this.lista;
-    }
-
     public int[] desordenada() {
-        for (int i = 0; i < this.lista.length; i++) {
-            this.lista[i] = (int) (i);
-        }
         return this.lista;
     }
 
     public int[] invertida() {
         for (int i = this.lista.length - 1; i >=0; i--) {
-            this.lista[i] = (int) (i);
+            this.lista[this.lista.length - i - 1] = (int) (i);
         }
         return this.lista;
     }
