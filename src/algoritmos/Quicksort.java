@@ -20,9 +20,14 @@ public class Quicksort extends Sort {
         this.lista = this.cargarLista(opc);
     }
 
-    public void sortList(int[] array, int inicio, int fin) {
+    public void sortlist_start() {
         this.timer.start();
+        this.sortList(this.lista, 0, this.lista.length - 1);
+        this.timer.stop();
+        this.set_time(this.timer.time());
+    }
 
+    public void sortList(int[] array, int inicio, int fin) {
         int i = inicio, j = fin;
         if (fin - inicio >= 1) {
             int pivot = array[fin];
@@ -48,8 +53,7 @@ public class Quicksort extends Sort {
         } else {
             return;
         }
-        this.timer.stop();
-        this.set_time(this.timer.time());
+
     }
 
     public void swap(int[] ar, int index1, int index2) {
@@ -60,7 +64,7 @@ public class Quicksort extends Sort {
     }
 
     public void run() {
-        this.sortList(this.lista, 0, this.lista.length - 1);
+        this.sortlist_start();
         this.presentar();
     }
 }
