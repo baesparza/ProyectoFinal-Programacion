@@ -17,9 +17,7 @@ public class JavaSort extends Sort {
 
     // constructor con los atributos de la clase Sort
     public JavaSort(int opc) {
-        super("Java Sort",
-                "Descripcion..."
-        );
+        super("Java Sort");
         this.lista = this.cargarLista(opc);
     }
 
@@ -29,5 +27,10 @@ public class JavaSort extends Sort {
         this.add_cont_procesos();
         this.timer.stop();
         this.set_time(this.timer.time());
+    }
+    
+    public void run() {
+        this.sortList();
+        this.presentar();
     }
 }
