@@ -18,18 +18,16 @@ public class Sort {
     private String nombre_projecto;
     private String descripcion_projecto;
     private String nombre_algoritmo;
-    private String descripcion_algoritmo;
     private long time;
     public int[] lista;
     private int cont_procesos = 0;
-    private int lista_tamano = 10000;
+    private int lista_tamano = 5;
 
     // contructor con parametros
-    public Sort(String nombre_algoritmo, String descripcion_algoritmo) {
+    public Sort(String nombre_algoritmo) {
         this.nombre_projecto = "Algoritmos de ordenamiento";
         this.descripcion_projecto = "Uso de diferentes algoritmos para ordenar listas, verificar su velocidad y numero de procesos.";
         this.nombre_algoritmo = nombre_algoritmo;
-        this.descripcion_algoritmo = descripcion_algoritmo;
     }
 
     public int[] cargarLista(int opc) {
@@ -45,26 +43,21 @@ public class Sort {
 
         switch (opc) {
             case (1):
-                // lista semi ordenada
-                return gen.semiordenada();
-            case (2):
                 // lista desordenada
                 return gen.desordenada();
-            case (3):
+            case (2):
                 // lista ordenada al reves
                 return gen.invertida();
             default:
-                cargarLista(1);
-                break;
+                return gen.desordenada();
         }
-        return null;
     }
-    
+
     public void presentar() {
         System.out.println(this.nombre_algoritmo);
-        System.out.println("Numero de procesos realizados: " + this.cont_procesos);
+        System.out.println("Numero de procesos realizados: " + this.cont_procesos + " aproximadamente");
         System.out.println(Arrays.toString(this.lista));
-        System.out.println("Promedio: " + this.time / 100 + " Milisegundos...");
+        System.out.println("Tiempo: " + this.time / 100);
     }
 
     public void add_cont_procesos() {
