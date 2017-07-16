@@ -26,7 +26,7 @@ public class Sort {
     private long time;
     public int[] lista;
     private int cont_procesos = 0;
-    private int lista_tamano = 20;
+    private int lista_tamano = 5000;
     public Tiempo timer = new Tiempo();;
 
     public Sort(String nombre_algoritmo) {
