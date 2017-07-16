@@ -29,9 +29,12 @@ public class generador {
          * Devuelve una lista desordenada que se carga desde una lista externa
         */
 
-        // Aqui se carca el archivo deshordenado.
-        for (int i = 0; i < this.lista.length; i++) {
-            this.lista[i] = (int) (Math.random() * 10) + 1;
+        int[] lista = new int [5000];
+        CargarLista a = new CargarLista();
+        String preLis = a.leerTxt("ListaD.txt");
+        String[] lista1 = preLis.split(" ");
+        for (int i = 0; i < lista.length; i++){
+            this.lista[i] = Integer.parseInt(lista1[i]);
         }
         return this.lista;
     }
