@@ -14,6 +14,9 @@ public class CargarLista {
      * Clase carga archivos externos
      */
     
+     public CargarLista() {
+     }
+
     public String leerTxt(String nombreArchivo){
         /**
          * recibe la direccion del archivo
